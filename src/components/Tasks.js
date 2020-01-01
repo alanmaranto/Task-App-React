@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 import Task from "./Task/Task";
 
 class Tasks extends Component {
   render() {
-    const { tasks } = this.props;
+    const { tasks, deleteTask, checkDone } = this.props;
     return (
       <div>
         {tasks.map(task => (
-          <Task task={task} key={task.id} />
+          <Task task={task} key={task.id} deleteTask={deleteTask} checkDone={checkDone} />
         ))}
       </div>
     );
@@ -17,7 +17,7 @@ class Tasks extends Component {
 }
 
 Tasks.propTypes = {
-    tasks: PropTypes.array.isRequired,
-}
+  tasks: PropTypes.array.isRequired
+};
 
 export default Tasks;
