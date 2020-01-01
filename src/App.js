@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./App.css";
 
 import Tasks from "./components/Tasks";
 import tasks from "./mock/task.json";
 import TaskForm from "./components/TaskForm/TaskForm";
-import Post from "./components/Post";
+import Posts from "./components/Post";
 
 const initialState = {
   tasks: tasks
@@ -48,15 +50,26 @@ class App extends Component {
   render() {
     const { tasks } = this.state;
     return (
-      <>
-        <TaskForm addTask={this.addTask} />
-        <Tasks
-          tasks={tasks}
-          deleteTask={this.deleteTask}
-          checkDone={this.checkDone}
-        />
-        <Post />
-      </>
+      <div>
+        <Router>
+          <Route
+            path="/"
+            render={() => {
+              return (
+                <div>
+                  <TaskForm addTask={this.addTask} />
+                  <Tasks
+                    tasks={tasks}
+                    deleteTask={this.deleteTask}
+                    checkDone={this.checkDone}
+                  />
+                </div>
+              );
+            }} />
+          <Route path="/posts" component={Posts}>
+          </Route>
+        </Router>
+      </div>
     );
   }
 }
