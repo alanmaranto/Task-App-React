@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Tasks from './components/Tasks';
+import Tasks from "./components/Tasks";
 import tasks from "./mock/task.json";
 
 const initialState = {
@@ -15,7 +15,7 @@ class App extends Component {
 
   render() {
     const { tasks } = this.state;
-    return <Tasks tasks={tasks} />
+    return <Tasks tasks={tasks} />;
   }
 }
 

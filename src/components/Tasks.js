@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
+import Task from "./Task";
+
 class Tasks extends Component {
   render() {
     const { tasks } = this.props;
     return (
       <div>
         {tasks.map(task => (
-          <p key={task.id}>
-            {task.title} - {task.description} - {task.done}
-            <input type="checkbox" />
-            <button>x</button>
-          </p>
+          <Task task={task} key={task.id} />
         ))}
       </div>
     );
