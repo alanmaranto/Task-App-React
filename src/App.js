@@ -14,11 +14,15 @@ class App extends Component {
     this.state = initialState;
   }
 
+  addTask = (task) => {
+    console.log(task)
+  }
+
   render() {
     const { tasks } = this.state;
     return (
       <>
-      <TaskForm />
+      <TaskForm addTask={this.addTask} />
       <Tasks tasks={tasks} />
       </>
     )

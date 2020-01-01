@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 const initialState = {
-  title: '',
-  description: '',
+  title: "",
+  description: ""
 };
 
 class TaskForm extends Component {
@@ -12,18 +12,20 @@ class TaskForm extends Component {
   }
 
   onSubmit = e => {
-      console.log(this.state)
+    console.log(this.state);
     e.preventDefault();
   };
 
   listeningEvent = e => {
-      console.log(e.target.name, e.target.value)
+    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
   render() {
+    const { addTask } = this.props;
+    addTask('task from taskform')
     const { title, description } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
