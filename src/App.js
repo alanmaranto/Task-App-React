@@ -14,8 +14,17 @@ class App extends Component {
     this.state = initialState;
   }
 
-  addTask = (task) => {
-    console.log(task)
+  addTask = (title, description) => {
+    const { tasks } = this.state;
+
+    const newTask = {
+      title,
+      description,
+      id: 45,
+    }
+    this.setState({
+      tasks: [...tasks, newTask]
+    })
   }
 
   render() {

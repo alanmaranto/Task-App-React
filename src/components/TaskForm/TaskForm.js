@@ -12,7 +12,10 @@ class TaskForm extends Component {
   }
 
   onSubmit = e => {
-    console.log(this.state);
+    const { addTask } = this.props;
+    const { title, description } = this.state;
+    
+    addTask(title, description)
     e.preventDefault();
   };
 
@@ -24,8 +27,6 @@ class TaskForm extends Component {
   };
 
   render() {
-    const { addTask } = this.props;
-    addTask('task from taskform')
     const { title, description } = this.state;
     return (
       <form onSubmit={this.onSubmit}>
