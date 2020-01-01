@@ -1,10 +1,28 @@
 import React, { Component } from "react";
 
+const initialState = { 
+
+}
 class Task extends Component {
+  constructor(props){
+    super(props);
+    this.state= initialState;
+  }
+
+  styleCompleted = () => {
+    const { task } = this.props;
+    return {
+      fontSize: '20px',
+      color: task.done ? 'purple' : 'red',
+      textDecoration: task.done ? 'line-through' : 'none'
+    }
+  }
+
   render() {
+    
     const { task } = this.props;
     return (
-      <p className="">
+      <p style={this.styleCompleted()}>
         {task.title} - {task.description} - {task.done}
         <input type="checkbox" />
         <button style={btnDelete}>x</button>
