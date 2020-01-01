@@ -52,7 +52,11 @@ class App extends Component {
     return (
       <div>
         <Router>
+          <Link to="/">Home</Link>
+          <br />
+          <Link to="/posts">Posts</Link>
           <Route
+            exact
             path="/"
             render={() => {
               return (
@@ -65,9 +69,9 @@ class App extends Component {
                   />
                 </div>
               );
-            }} />
-          <Route path="/posts" component={Posts}>
-          </Route>
+            }}
+          />
+          <Route path="/posts" component={Posts}></Route>
         </Router>
       </div>
     );
