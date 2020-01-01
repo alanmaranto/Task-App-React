@@ -4,6 +4,7 @@ import "./App.css";
 import Tasks from "./components/Tasks";
 import tasks from "./mock/task.json";
 import TaskForm from "./components/TaskForm/TaskForm";
+import Post from "./components/Post";
 
 const initialState = {
   tasks: tasks
@@ -54,6 +55,7 @@ class App extends Component {
           deleteTask={this.deleteTask}
           checkDone={this.checkDone}
         />
+        <Post />
       </>
     );
   }
