@@ -20,7 +20,7 @@ class App extends Component {
     const newTask = {
       title,
       description,
-      id: 45,
+      id: tasks.length,
     }
     this.setState({
       tasks: [...tasks, newTask]

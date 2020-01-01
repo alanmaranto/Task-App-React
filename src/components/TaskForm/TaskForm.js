@@ -14,13 +14,12 @@ class TaskForm extends Component {
   onSubmit = e => {
     const { addTask } = this.props;
     const { title, description } = this.state;
-    
+
     addTask(title, description)
     e.preventDefault();
   };
 
   listeningEvent = e => {
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value
     });
