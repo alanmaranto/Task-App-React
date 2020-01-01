@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 const initialState = { 
 
@@ -39,6 +40,10 @@ const btnDelete = {
   padding: '10px 15px',
   borderRadius: '50%',
   cursor: 'pointer',
+}
+
+Task.propTypes = {
+  task: PropTypes.object.isRequired,
 }
 
 export default Task;
